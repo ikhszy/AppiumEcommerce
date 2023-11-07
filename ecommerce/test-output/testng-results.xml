@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-07T11:40:32 WIB" name="Default suite" finished-at="2023-11-07T11:43:05 WIB" duration-ms="152848">
+  <suite started-at="2023-11-07T23:17:11 WIB" name="Suite" finished-at="2023-11-07T23:20:04 WIB" duration-ms="172532">
     <groups>
     </groups>
-    <test started-at="2023-11-07T11:40:32 WIB" name="Default test" finished-at="2023-11-07T11:43:05 WIB" duration-ms="152848">
+    <test started-at="2023-11-07T23:17:11 WIB" name="E2E" finished-at="2023-11-07T23:20:04 WIB" duration-ms="172532">
       <class name="org.appiumFramework.ecommerce.E2E">
-        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:org.appiumFramework.ecommerce.E2E@25be7b63]" started-at="2023-11-07T11:40:33 WIB" name="ConfigureAppium" finished-at="2023-11-07T11:40:55 WIB" duration-ms="22957" status="PASS">
+        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:org.appiumFramework.ecommerce.E2E@3081f72c]" started-at="2023-11-07T23:17:11 WIB" name="ConfigureAppium" finished-at="2023-11-07T23:17:48 WIB" duration-ms="36792" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ConfigureAppium -->
-        <test-method signature="E2E001()[pri:1, instance:org.appiumFramework.ecommerce.E2E@25be7b63]" started-at="2023-11-07T11:40:55 WIB" name="E2E001" description="Purchase single, first item" finished-at="2023-11-07T11:41:28 WIB" duration-ms="32371" status="PASS">
+        <test-method signature="E2E001()[pri:1, instance:org.appiumFramework.ecommerce.E2E@3081f72c]" started-at="2023-11-07T23:17:48 WIB" name="E2E001" description="Purchase single, first item" finished-at="2023-11-07T23:18:22 WIB" duration-ms="33580" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- E2E001 -->
-        <test-method signature="E2E002()[pri:2, instance:org.appiumFramework.ecommerce.E2E@25be7b63]" started-at="2023-11-07T11:41:28 WIB" name="E2E002" description="purchase multiple items from category" finished-at="2023-11-07T11:42:28 WIB" duration-ms="60234" status="PASS">
+        <test-method signature="E2E002()[pri:2, instance:org.appiumFramework.ecommerce.E2E@3081f72c]" started-at="2023-11-07T23:18:22 WIB" name="E2E002" description="purchase multiple items from category" finished-at="2023-11-07T23:19:25 WIB" duration-ms="63795" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- E2E002 -->
-        <test-method signature="E2E003()[pri:3, instance:org.appiumFramework.ecommerce.E2E@25be7b63]" started-at="2023-11-07T11:42:28 WIB" name="E2E003" description="search and purchase item" finished-at="2023-11-07T11:43:04 WIB" duration-ms="35674" status="PASS">
+        <test-method signature="E2E003()[pri:3, instance:org.appiumFramework.ecommerce.E2E@3081f72c]" started-at="2023-11-07T23:19:25 WIB" name="E2E003" description="search and purchase item" finished-at="2023-11-07T23:20:03 WIB" duration-ms="37320" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- E2E003 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.appiumFramework.ecommerce.E2E@25be7b63]" started-at="2023-11-07T11:43:04 WIB" name="tearDown" finished-at="2023-11-07T11:43:05 WIB" duration-ms="1501" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.appiumFramework.ecommerce.E2E@3081f72c]" started-at="2023-11-07T23:20:03 WIB" name="tearDown" finished-at="2023-11-07T23:20:04 WIB" duration-ms="898" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- org.appiumFramework.ecommerce.E2E -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- E2E -->
+  </suite> <!-- Suite -->
 </testng-results>
