@@ -1,9 +1,11 @@
 package org.appiumFramework.ecommerce;
 
 import java.io.File;
-import java.net.MalformedURLException;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.appiumFramework.ecommerce.pageObjects.SplashPage;
 import org.appiumFramework.ecommerce.utils.Variables;
@@ -39,7 +41,7 @@ public class BaseClass {
 	public Variables vrb;
 	
 	@BeforeClass
-	public void ConfigureAppium() throws MalformedURLException {
+	public void ConfigureAppium() throws IOException {
 		
 		/*
 		 * starting the server
@@ -48,19 +50,26 @@ public class BaseClass {
 		 * probably need it, but i don't wanna break everything i've done
 		 */
 		
+		Properties prop = new Properties();
+		FileInputStream fis = new FileInputStream("C:\\Users\\Acer\\git\\localAppiumEcommerce\\ecommerce\\src\\main\\java\\org\\appiumFramework\\ecommerce\\resources\\config.properties");
+		prop.load(fis);
+		String ipAddress = prop.getProperty("ipAddress");
+		int port = Integer.parseInt(prop.getProperty("port"));
+		String deviceName = prop.getProperty("AndroidDeviceName");
+		
 		service = new AppiumServiceBuilder().withAppiumJS(new File("C:\\Users\\Acer\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-				.withIPAddress("127.0.0.1").usingPort(4723).build();
+				.withIPAddress(ipAddress).usingPort(port).build();
 		service.start();
 		
 		// starting the apps
 		UiAutomator2Options opt = new UiAutomator2Options();
 		opt.setChromedriverExecutable("C:\\Users\\Acer\\eclipse-workspace\\appium\\src\\test\\java\\resources\\chromedriver.exe");
-		opt.setDeviceName("emulator-5554");
-		opt.setApp("C:\\Users\\Acer\\git\\localAppiumEcommerce\\ecommerce\\src\\test\\java\\resource\\app-debug.apk");
+		opt.setDeviceName(deviceName);
+		opt.setApp("C:\\Users\\Acer\\git\\localAppiumEcommerce\\ecommerce\\src\\test\\java\\org\\appiumFramework\\ecommerce\\resource\\app-debug.apk");
 		opt.setPlatformName("Android");
 		
 		// declare driver
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), opt);
+		driver = new AndroidDriver(new URL("http://" + ipAddress + ":" + prop.getProperty("port")), opt);
 		driver.setSetting("enforceXPath1",true);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
@@ -81,15 +90,6 @@ public class BaseClass {
 		vrb.setLastname(faker.name().lastName());
 		vrb.setPhone(faker.phoneNumber().cellPhone());
 		vrb.setPassword(faker.internet().password());
-	}
-	
-	public void threadSleep(int second) {
-		try {
-			Thread.sleep(second * 1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	@AfterClass
