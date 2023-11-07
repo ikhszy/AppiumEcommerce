@@ -18,7 +18,6 @@ import org.appiumFramework.ecommerce.pageObjects.PaymentPage;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
 import com.github.javafaker.Faker;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -98,5 +97,4 @@ public class BaseClass {
 		driver.quit();
 		service.stop();
 	}
-
 }
