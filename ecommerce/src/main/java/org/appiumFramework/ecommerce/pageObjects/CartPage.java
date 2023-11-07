@@ -61,6 +61,11 @@ public class CartPage extends AndroidGestures {
 	public ArrayList<String> tempString;
 	public ArrayList<Double> tempDouble;
 	
+	public int itemsTotal() {
+		int total = cartName.size();
+		return total;
+	}
+	
 	public String itemNameByIndex(int index) {
 		String name = cartName.get(index).getText();
 		return name;
@@ -90,30 +95,34 @@ public class CartPage extends AndroidGestures {
 		return tempDouble;
 	}
 	
-	public void increaseItemQuantityByIndex(int index, int repeat) {
+	public void increaseItemQuantityByIndex(int index, int repeat) throws InterruptedException {
 		for(int i = 1; i <= repeat; i++) {
 			plusButton.get(index).click();
+			Thread.sleep(1000);
 		}
 	}
 	
-	public void increaseAllItemQuantity(int repeat) {
+	public void increaseAllItemQuantity(int repeat) throws InterruptedException {
 		for(int i = 0; i < plusButton.size(); i++) {
 			for(int j = 1; j <= repeat; j++) {
 				plusButton.get(i).click();
+				Thread.sleep(1000);
 			}
 		}
 	}
 	
-	public void decreaseItemQuantityByIndex(int index, int repeat) {
+	public void decreaseItemQuantityByIndex(int index, int repeat) throws InterruptedException {
 		for(int i = 1; i <= repeat; i++) {
 			minusButton.get(index).click();
+			Thread.sleep(1000);
 		}
 	}
 	
-	public void decreaseAllItemQuantity(int repeat) {
+	public void decreaseAllItemQuantity(int repeat) throws InterruptedException {
 		for(int i = 0; i < minusButton.size(); i++) {
 			for(int j = 1; j <= repeat; j++) {
 				minusButton.get(i).click();
+				Thread.sleep(1000);
 			}
 		}
 	}
@@ -132,29 +141,34 @@ public class CartPage extends AndroidGestures {
 		buyButton.click();
 	}
 	
-	public void removeItemByIndex(int index) {
+	public void removeSingleItem() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		
-		String resourceId = cartBox.getAttribute("resource-id");
-		String locator = "//*[@id='" + resourceId+ "']/android.widget.FrameLayout[" + String.valueOf(index)+ "]";
-		
-		longPressAction(driver.findElement(AppiumBy.xpath(locator)));
+		longPressAction(cartName.get(0));
 		wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.id("com.mustafaunlu.ecommerce:id/parentPanel")));
 		
 		yesDelete.click();
 	}
 	
-	public void removeAllItem() {
+	public void removeItemByIndex(int index) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		
-		String resourceId = cartBox.getAttribute("resource-id");
+		longPressAction(cartName.get(index));
+		wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.id("com.mustafaunlu.ecommerce:id/parentPanel")));
+		
+		yesDelete.click();
+	}
+	
+	public void removeAllItem() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		
 		for(int i = cartName.size() - 1; i >= 0; i--) {
-			String locator = "//*[@id='" + resourceId+ "']/android.widget.FrameLayout[" + String.valueOf(i)+ "]";
-			longPressAction(driver.findElement(AppiumBy.xpath(locator)));
+			longPressAction(cartName.get(i));
 			
 			wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.id("com.mustafaunlu.ecommerce:id/parentPanel")));
 			yesDelete.click();
+			
+			Thread.sleep(1000);
 		}
 	}
 	

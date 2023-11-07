@@ -6,7 +6,7 @@
       <class name="org.appiumFramework.ecommerce.E2E">
         <methods>
           <include name="tearDown"/>
-          <include name="E2E001"/>
+          <include name="E2E002"/>
           <include name="ConfigureAppium"/>
         </methods>
       </class> <!-- org.appiumFramework.ecommerce.E2E -->

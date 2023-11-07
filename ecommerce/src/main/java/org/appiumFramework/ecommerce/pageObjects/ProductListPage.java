@@ -29,6 +29,9 @@ public class ProductListPage extends AndroidGestures {
 	@AndroidFindBy(id="com.mustafaunlu.ecommerce:id/category_item_name")
 	private List<WebElement> categories;
 	
+	@AndroidFindBy(id="com.mustafaunlu.ecommerce:id/home_item_img")
+	public List<WebElement> productsImg;
+	
 	@AndroidFindBy(id="com.mustafaunlu.ecommerce:id/home_product_title")
 	private List<WebElement> productsTitle;
 	
@@ -67,6 +70,11 @@ public class ProductListPage extends AndroidGestures {
 	
 	public void clickItemByIndex(int index) {
 		productsTitle.get(index).click();
+	}
+	
+	public void searchItem(String search) throws InterruptedException {
+		searchBar.sendKeys(search);
+		Thread.sleep(2000);
 	}
 	
 	public void homeClick() {
