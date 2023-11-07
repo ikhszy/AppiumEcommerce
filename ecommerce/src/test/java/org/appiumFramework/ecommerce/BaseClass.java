@@ -56,7 +56,7 @@ public class BaseClass {
 		UiAutomator2Options opt = new UiAutomator2Options();
 		opt.setChromedriverExecutable("C:\\Users\\Acer\\eclipse-workspace\\appium\\src\\test\\java\\resources\\chromedriver.exe");
 		opt.setDeviceName("emulator-5554");
-		opt.setApp("C:\\Users\\Acer\\Documents\\Project\\ecommerce\\src\\test\\java\\resource\\app-debug.apk");
+		opt.setApp("C:\\Users\\Acer\\git\\localAppiumEcommerce\\ecommerce\\src\\test\\java\\resource\\app-debug.apk");
 		opt.setPlatformName("Android");
 		
 		// declare driver
