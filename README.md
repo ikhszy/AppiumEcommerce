@@ -1,6 +1,6 @@
 # AppiumEcommerce
 
-Hello, this is my first attempt on Appium. It runs on Android apps called ecommerce (big thanks to the developer for creating this nice apps). Not the most robust, but hey, it works!.
+Hello, this is my first attempt on Appium. It runs on Android apps called [ecommerce](https://github.com/mustfaunlu/intern-ecommerce) (big thanks to the developer for creating this nice apps). Not the most robust, but hey, it works!.
 
 Here are some details of the project:
 - Appium version: 8.6
