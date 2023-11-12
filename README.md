@@ -17,4 +17,8 @@ For those who wants to pull and run it, keep in mind of these:
 
 Sample video of the project run:
 
+
+https://github.com/ikhszy/AppiumEcommerce/assets/57410839/30b07873-53de-4e6a-8050-0d0a5bc0bc33
+
+
 Thanks for checking and have fun (if you pull it)!
