@@ -100,5 +100,16 @@ public class AndroidGestures {
 			e.printStackTrace();
 		}
 	}
+	
+	public int getElementX(By by) {
+		int x = driver.findElement(by).getLocation().getX();
+		return x;
+	}
+	
+	public int getElementY(By by) {
+		int upperY = driver.findElement(by).getLocation().getY();
+		int lowerY = upperY + driver.findElement(by).getSize().getHeight();
+		return lowerY;
+	}
 
 }
