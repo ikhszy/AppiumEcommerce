@@ -97,8 +97,8 @@ public class E2E extends BaseClass {
 		// fill the credit card information
 		pyPage.cardNameType("John Jones");
 		pyPage.cardNumberType("4111111111111111");
-		pyPage.cardMonthType();
-		pyPage.cardYearType();
+		pyPage.cardMonthType(2);
+		pyPage.cardYearType(4);
 		pyPage.cardCvcType("295");
 		pyPage.cardAddressType("Location unknown");
 		
@@ -194,8 +194,8 @@ public class E2E extends BaseClass {
 		// fill the credit card information
 		pyPage.cardNameType("John Jones");
 		pyPage.cardNumberType("4111111111111111");
-		pyPage.cardMonthType();
-		pyPage.cardYearType();
+		pyPage.cardMonthType(2);
+		pyPage.cardYearType(4);
 		pyPage.cardCvcType("295");
 		pyPage.cardAddressType("Location unknown");
 		
@@ -292,8 +292,8 @@ public class E2E extends BaseClass {
 		// fill the credit card information
 		pyPage.cardNameType("John Jones");
 		pyPage.cardNumberType("4111111111111111");
-		pyPage.cardMonthType();
-		pyPage.cardYearType();
+		pyPage.cardMonthType(2);
+		pyPage.cardYearType(4);
 		pyPage.cardCvcType("295");
 		pyPage.cardAddressType("Location unknown");
 		

@@ -1,6 +1,7 @@
 package org.appiumFramework.ecommerce.pageObjects;
 
 import org.appiumFramework.ecommerce.utils.AndroidGestures;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -52,22 +53,54 @@ public class PaymentPage extends AndroidGestures {
 		driver.hideKeyboard();
 	}
 	
-	public void cardMonthType() throws InterruptedException {
-		cardMonth.click();
+	public void cardMonthType(int month) {
+		 int x = getElementX(By.xpath("(//android.widget.ImageButton[@content-desc=\"Show dropdown menu\"])[1]"));
+		 int y = getElementY(By.xpath("(//android.widget.ImageButton[@content-desc=\"Show dropdown menu\"])[1]"));
+		 
+		 if(month == 1) {
+			 y = y + 80;
+		 } else {
+			 y = y + 80 + (50*month);
+		 }
+		 
+		 System.out.println("x: " + x + " y: " + y);
+		 
+		 cardMonth.click();
 		
-		Thread.sleep(1000);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		TouchAction touchAction = new TouchAction(driver);
-		touchAction.tap(PointOption.point(92, 1252)).perform();
+		touchAction.tap(PointOption.point(x, y)).perform();
 	}
 	
-	public void cardYearType() throws InterruptedException {
+	public void cardYearType(int yearIndex) {
+		int x = getElementX(By.xpath("(//android.widget.ImageButton[@content-desc=\"Show dropdown menu\"])[2]"));
+		int y = getElementY(By.xpath("(//android.widget.ImageButton[@content-desc=\"Show dropdown menu\"])[2]"));
+		 
+		if(yearIndex <= 1) {
+			y = y + 80;
+		} else {
+			y = y + 80 + (50*yearIndex);
+		}
+		 
+		System.out.println("x: " + x + " y: " + y);
+		 
 		cardYear.click();
 		
-		Thread.sleep(1000);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		TouchAction touchAction = new TouchAction(driver);
-		touchAction.tap(PointOption.point(496, 1143)).perform();
+		touchAction.tap(PointOption.point(x, y)).perform();
 	}
 	
 	public void cardCvcType(String cvc) {
